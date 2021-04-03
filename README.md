@@ -1,2 +1,2 @@
 # Squirrel_Tracker
-Project for Group 24
+Final Project for Group 24

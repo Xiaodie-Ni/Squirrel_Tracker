@@ -4,8 +4,8 @@ from django.db import models
 # Create your models here.
 class Sighting(models.Model):
     SHIFT_CHOICES = [
-        ("AM", "AM"),
-        ("PM", "PM"),
+        ("AM", "A.M."),
+        ("PM", "P.M."),
     ]
 
     AGE_CHOICES = [
@@ -21,8 +21,8 @@ class Sighting(models.Model):
     ]
 
     LOCATION_CHOICE = [
-        ("Ground Plane", 'Ground Plane'),
-        ("Above Ground", 'Above Ground'),
+        ("Ground Plane", "Ground Plane"),
+        ("Above Ground", "Above Ground"),
     ]
 
     longitude = models.FloatField(
@@ -45,7 +45,7 @@ class Sighting(models.Model):
         blank=True
     )
 
-    data = models.DateField(
+    date = models.DateField(
         help_text="The date the squirrel was observed.",
         null=True,
         blank=True
@@ -129,7 +129,7 @@ class Sighting(models.Model):
         help_text="Indifferent",
         blank=True,
     )
-    runs = models.BooleanField(
+    runs_from = models.BooleanField(
         help_text="Runs from",
         blank=True,
     )

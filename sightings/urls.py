@@ -19,5 +19,9 @@ from django.urls import path
 from sightings import views
 
 urlpatterns = [
-    path("map/", views.view_map),
+    path("map/", views.view_map, name='map'),
+    path("sightings/", views.list_sightings, name='sightings'),
+    path('sightings/add/', views.add_sighting, name='add'),
+    path('sightings/stats/', views.get_general_stats, name='stats'),
+    path('sightings/<unique_id>/', views.update_sighting, name='update'),
 ]

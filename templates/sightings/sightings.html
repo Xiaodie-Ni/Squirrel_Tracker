@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of sightings</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1> List of squirrels id </h1>
+    <h2><a href='/sightings/add'> add</a></h2>
+    <ul>
+        {% for squirrel in sightings %}
+            <li><a href='/sightings/{{ squirrel.unique_squirrel_id }}/'> {{ squirrel.unique_squirrel_id }} </a></li>
+            {{ squirrel.date }}
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

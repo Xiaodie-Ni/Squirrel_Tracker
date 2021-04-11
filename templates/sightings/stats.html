@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List of sightings</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<h1 class="text-center mt-5">Sighting Stats</h1>
+{% block content %}
+    <form method='GET'>
+
+        <style>
+            table,
+            table tr th,
+            table tr td {
+                border: 2px solid white;
+            }
+
+            table {
+                width: 900px;
+                min-height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-collapse: collapse;
+            }
+        </style>
+
+        <table align='center' class="mt-1 table table-striped">
+            <tr class="bg-info">
+                <th>Squirrels</th>
+                <th>Juvenile Age Squirrels</th>
+                <th>Squirrels with Gray Fur</th>
+                <th>Squirrels Running</th>
+                <th>Squirrels Eating</th>
+            </tr>
+            <tr class="bg-warning">
+                <td>{{ num_sightings }}</td>
+                <td>{{ num_adults }}</td>
+                <td>{{ num_gray }}</td>
+                <td>{{ num_running }}</td>
+                <td>{{ num_eating }}</td>
+            </tr>
+            </center>
+        </table>
+    </form>
+    <a href='/sightings/' class=''>
+        <button type='button' class='btn btn-primary button'>Back to the list page</button>
+    </a>
+{% endblock %}
+</body>
+</html>
